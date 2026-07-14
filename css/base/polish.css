@@ -1,0 +1,46 @@
+.section {
+	padding-block: clamp(72px, 7vw, 108px);
+}
+
+.section--compact {
+	padding-block: clamp(24px, 3vw, 40px);
+}
+
+.hero {
+	padding-block: var(--hero-top-space) var(--hero-bottom-space);
+}
+
+.section p,
+.section li,
+.section .eyebrow,
+.logo-strip__item,
+.site-footer p,
+.site-footer__legal a,
+.lead-form__label,
+.lead-form__choice label,
+.lead-form__input::placeholder,
+.legal__content,
+.legal__note {
+	color: oklch(70.8% 0 0);
+}
+
+.panel--light p,
+.panel--light li,
+.panel--light .eyebrow {
+	color: rgba(17, 17, 13, 0.68);
+}
+
+.section h1,
+.section h2,
+.section h3,
+.section summary,
+.site-footer__brand-main {
+	color: #f4efe2;
+}
+
+.panel--light h1,
+.panel--light h2,
+.panel--light h3,
+.panel--light summary {
+	color: #11110d;
+}

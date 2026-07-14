@@ -1,0 +1,132 @@
+.site-header {
+	position: sticky;
+	inset: 0 0 auto;
+	z-index: 20;
+	padding-block: 24px;
+	background: #080806;
+	border-bottom: 1px solid rgba(244, 239, 226, 0.1);
+	transition:
+		transform 0.45s cubic-bezier(0.76, 0, 0.24, 1),
+		padding 0.3s cubic-bezier(0.76, 0, 0.24, 1),
+		background 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.site-header.is-compact {
+	padding-block: 12px;
+	background: rgba(8, 8, 6, 0.82);
+	backdrop-filter: blur(16px);
+	border-bottom: 1px solid rgba(244, 239, 226, 0.16);
+}
+
+.site-header__container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 24px;
+}
+
+.site-header__brand,
+.site-header__actions,
+.site-header__nav {
+	display: flex;
+	align-items: center;
+}
+
+.site-header__brand {
+	gap: 10px;
+	flex: 0 0 auto;
+	font-weight: 800;
+	color: #f4efe2;
+}
+
+.site-header__logo {
+	display: inline-flex;
+	align-items: center;
+}
+
+.site-header__mark,
+.site-header__name {
+	display: inline-flex;
+	align-items: center;
+}
+
+.site-header__mark {
+	width: 48px;
+	height: 32px;
+	color: currentColor;
+}
+
+.site-header__name {
+	line-height: 1;
+}
+
+.site-header__actions {
+	gap: 10px;
+}
+
+.site-header__toggle {
+	display: none;
+	width: 46px;
+	height: 46px;
+	border: 1px solid rgba(244, 239, 226, 0.16);
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.06);
+}
+
+.site-header__toggle-line {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	display: block;
+	width: 18px;
+	height: 2px;
+	margin: 0;
+	background: #f4efe2;
+	transform: translate(-50%, -50%);
+	transition:
+		transform 0.25s cubic-bezier(0.76, 0, 0.24, 1),
+		opacity 0.2s ease;
+}
+
+.site-header__toggle-line:first-child {
+	transform: translate(-50%, calc(-50% - 6px));
+}
+
+.site-header__toggle-line:last-child {
+	transform: translate(-50%, calc(-50% + 6px));
+}
+
+.nav__list {
+	display: flex;
+	align-items: center;
+	gap: clamp(18px, 3vw, 42px);
+	padding: 0;
+	list-style: none;
+}
+
+.nav__link {
+	position: relative;
+	color: rgba(244, 239, 226, 0.76);
+	font-size: 16px;
+	font-weight: 600;
+	transition: color 0.2s ease;
+}
+
+.nav__link::after {
+	content: "";
+	position: absolute;
+	inset: auto 0 -5px;
+	height: 1px;
+	background: currentColor;
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: transform 0.25s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.nav__link:hover {
+	color: #f4efe2;
+}
+
+.nav__link:hover::after {
+	transform: scaleX(1);
+}

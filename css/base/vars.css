@@ -1,0 +1,8 @@
+:root {
+	--color-bg: #080806;
+	--color-paper: #f4efe2;
+	--color-ink: #11110d;
+	--color-lime: #d8ff64;
+	--ease: cubic-bezier(0.76, 0, 0.24, 1);
+	--container: 1630px;
+}
