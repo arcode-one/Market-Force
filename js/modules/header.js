@@ -40,9 +40,29 @@ export function initHeader() {
 		}
 	});
 
+	document.addEventListener(
+		"pointerdown",
+		(event) => {
+			if (!mobileMenu.matches || !header.classList.contains("is-open")) return;
+			if (header.contains(event.target)) return;
+
+			setMenuState(false);
+		},
+		{ passive: true },
+	);
+
 	mobileMenu.addEventListener?.("change", () => setMenuState(false));
 
-	window.addEventListener("scroll", updateHeader, { passive: true });
+	window.addEventListener(
+		"scroll",
+		() => {
+			updateHeader();
+			if (mobileMenu.matches && header.classList.contains("is-open")) {
+				setMenuState(false);
+			}
+		},
+		{ passive: true },
+	);
 	updateHeader();
 	setMenuState(false);
 }
